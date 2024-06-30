@@ -3,7 +3,7 @@ import mysql.connector  # using mysql connector
 myDB = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="login12*",
+    password="Shiva@123",
     database="demo"
 )
 
@@ -21,7 +21,7 @@ print("-----------------------------------------------")
 
 # Data retrieval 
 print("Employee name and their role:")
-myCursor.execute("select emp_name, role from employees")
+myCursor.execute("select name, department from employees")
 for emp in myCursor:
     print(emp)
 
@@ -29,39 +29,45 @@ print("-----------------------------------------------")
 
 
 print("Employee name with years of experiance:")
-myCursor.execute("select emp_name, emp_yoe, emp_salary from employees")
+myCursor.execute("select name, emp_yoe, emp_salary from employees")
 for emp in myCursor:
     print(emp)
 
 print("-----------------------------------------------")
 
 
-# Insert operation 
-myCursor.execute("insert into employees(emp_id, emp_name, emp_salary, emp_yoe, emp_country, emp_city, role) values(4, 'Hari', 9000, 2, 'India', 'Delhi', 'Designer')" )
-for emp in myCursor:
-    print(emp)
 
-myDB.commit()
-print("Record inserted successfully")
 
-print("-----------------------------------------------")
+# # Insert operation 
+# myCursor.execute("insert into employees(id, name, emp_salary, emp_yoe, age, department) values(4, 'Sonu', 9000, 2, 26, 'Designer')" )
+# for emp in myCursor:
+#     print(emp)
+
+# myDB.commit()
+# print("Record inserted successfully")
+
+# print("-----------------------------------------------")
+
+
 
 
 # Delete opearation 
-myCursor.execute("delete from employees where emp_id = 4")
-myDB.commit()
-print("Successfully Deleted")
+# myCursor.execute("delete from employees where id = 4")
+# myDB.commit()
+# print("Successfully Deleted")
 
-print("-----------------------------------------------")
+# print("-----------------------------------------------")
 
 
 # Update opearation 
-print("Role senior engineer changed to tech lead ")
-myCursor.execute("update employees set role = 'Junior Engineer' where emp_id = 2")
-myDB.commit()
+# print("Role senior engineer changed to tech lead ")
+# myCursor.execute("update employees set department = 'Junior Engineer' where id = 2")
+# myDB.commit()
 
-print("Data Update Succcessfully")
-print("-----------------------------------------------")
+# print("Data Update Succcessfully")
+# print("-----------------------------------------------")
+
+
 
 
 if myDB.is_connected:
