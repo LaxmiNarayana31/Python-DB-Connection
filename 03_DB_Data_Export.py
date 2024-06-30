@@ -1,4 +1,3 @@
-
 import mysql.connector  # using mysql connector 
 from tabulate import tabulate
 import smtplib
@@ -13,7 +12,7 @@ import pandas as pd
 myDB = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="login12*",
+    password="Shiva@123",
     database="demo"
 )
 myCursor = myDB.cursor()
