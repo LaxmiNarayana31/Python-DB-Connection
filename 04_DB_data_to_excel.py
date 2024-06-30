@@ -2,10 +2,11 @@ import mysql.connector
 import numpy as np
 import pandas as pd
 from tabulate import tabulate
+
 myDB = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="login12*",
+    password="Shiva@123",
     database="demo"
 )
 
