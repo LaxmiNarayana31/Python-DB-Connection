@@ -42,6 +42,7 @@ else:
     print("You're not connected to MySQL Server")
 
 
+
 data_list = [list(row) for row in rows]
 
 numpy_array = np.array(data_list)
