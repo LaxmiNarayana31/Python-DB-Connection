@@ -1,7 +1,8 @@
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import MetaData, Table, Column, String, Date, LargeBinary
+from sqlalchemy import MetaData, Table, Column, String, Date
 
 
 
@@ -15,9 +16,9 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 user = 'root'
-password = 'login12*'
+password = 'Shiva12*'
 host = 'localhost'
-database = 'Customer'
+database = 'demo'
 
 connection_string = f'mysql+mysqlconnector://{user}:{password}@{host}/{database}'
 
@@ -30,11 +31,8 @@ customerData = Table('customerData', metadata,
     Column('Name', String(50)),
     Column('email_address', String(40)),
     Column('phone_no', String(20)),
-    Column('address', String(255)),
-    Column('city', String(50)),
     Column('state', String(20)),
     Column('country', String(20)),
-    Column('user_picture', LargeBinary),
     Column('DOB', Date)
 )
 
