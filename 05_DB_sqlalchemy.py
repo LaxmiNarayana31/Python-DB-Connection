@@ -16,7 +16,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 user = 'root'
-password = 'Shiva12*'
+password = '____'
 host = 'localhost'
 database = 'demo'
 
