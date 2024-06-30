@@ -5,8 +5,8 @@ try:
     myDB = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Shiva@123",
-        database="demo"
+        password="______",
+        database="______"
     )
 
     if myDB.is_connected():
@@ -15,7 +15,6 @@ try:
 
         myCursor = myDB.cursor()
 
-        # Fetch employees table data
         myCursor.execute("SELECT * FROM employees")
         employees_data = myCursor.fetchall()
 
