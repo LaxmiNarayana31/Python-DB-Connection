@@ -18,7 +18,7 @@ Base = declarative_base()
 user = 'root'
 password = '____'
 host = 'localhost'
-database = 'demo'
+database = '_____'
 
 connection_string = f'mysql+mysqlconnector://{user}:{password}@{host}/{database}'
 
