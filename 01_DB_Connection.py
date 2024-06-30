@@ -1,10 +1,11 @@
 import mysql.connector
+from tabulate import tabulate
 
 try:
     myDB = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="login12*",
+        password="Shiva@123",
         database="demo"
     )
 
@@ -14,14 +15,14 @@ try:
 
         myCursor = myDB.cursor()
 
-        myCursor.execute("SHOW DATABASES")
-        print("List of databases:")
-        for db in myCursor:
-            print(db)  
+        # Fetch employees table data
+        myCursor.execute("SELECT * FROM employees")
+        employees_data = myCursor.fetchall()
 
-        myCursor.execute("SELECT DATABASE();")
-        record = myCursor.fetchone()
-        print("You're connected to database:", record)
+        # Define headers and print formatted table
+        headers = ["ID", "Name", "Age", "Department", "Years of Experience", "Salary"]
+        print("\nEmployees table:")
+        print(tabulate(employees_data, headers=headers, tablefmt="grid"))
 
 except mysql.connector.Error as e:
     print("Error connecting to MySQL:", e)
@@ -32,3 +33,4 @@ finally:
     if 'myDB' in locals() and myDB.is_connected():
         myDB.close()
         print("MySQL connection is closed")
+        
